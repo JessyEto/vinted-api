@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
-  cloud_name: 'dkbzj9jcc',
-  api_key: '796283575114837',
-  api_secret: 'VH720cmw19TqcjYLI3Dz-Z11HDk',
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 //Allow server to use formidable for post messsages
