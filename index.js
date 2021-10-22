@@ -27,6 +27,10 @@ app.use(userRoutes);
 const offerRoutes = require('./routes/offer-routes');
 app.use(offerRoutes);
 
+app.get('/', (req, res) => {
+  console.log('BIENVENUE ! ');
+});
+
 // server initiation
 app.listen(process.env.PORT, () => {
   console.log('Server started');
