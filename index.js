@@ -28,7 +28,7 @@ const offerRoutes = require('./routes/offer-routes');
 app.use(offerRoutes);
 
 app.get('/', (req, res) => {
-  res.json({ message: 'BIENVENUE ! ' });
+  res.json({ message: 'BIENVENUE !' });
 });
 
 // server initiation
