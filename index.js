@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const formidable = require('express-formidable');
 const mongoose = require('mongoose');
@@ -12,6 +13,7 @@ cloudinary.config({
 
 //Allow server to use formidable for post messsages
 const app = express();
+app.use(cors());
 app.use(formidable());
 
 //Mongodb connection
