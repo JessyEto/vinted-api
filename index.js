@@ -4,7 +4,6 @@ const formidable = require('express-formidable');
 const mongoose = require('mongoose');
 const cloudinary = require('cloudinary').v2;
 
-console.log('TEST');
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -17,7 +16,7 @@ app.use(cors());
 app.use(formidable());
 
 //Mongodb connection
-mongoose.connect('mongodb://localhost/vinted');
+mongoose.connect(process.env.MONGODB_URI);
 
 //Import signup routes
 const userRoutes = require('./routes/user-routes');
@@ -28,6 +27,6 @@ const offerRoutes = require('./routes/offer-routes');
 app.use(offerRoutes);
 
 // server initiation
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log('Server started');
 });
