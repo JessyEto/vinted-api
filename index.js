@@ -3,6 +3,7 @@ const formidable = require('express-formidable');
 const mongoose = require('mongoose');
 const cloudinary = require('cloudinary').v2;
 
+console.log('TEST');
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
