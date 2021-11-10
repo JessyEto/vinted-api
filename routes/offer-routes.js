@@ -102,7 +102,7 @@ router.put('/offer/update', isAuthenticated, async (req, res) => {
 });
 
 //route to get all offer based on query sent by the client
-router.get('/offers', isAuthenticated, async (req, res) => {
+router.get('/offers', async (req, res) => {
   try {
     const filter = {};
     //check the details parameter defined
