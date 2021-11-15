@@ -132,10 +132,18 @@ router.get('/offers', async (req, res) => {
       sort.product_price = 'desc';
     }
 
+    // const offers = await Offer.find(filter)
+    //   .populate({ path: 'owner', select: 'account' })
+    //   .sort(sort)
+    //   .limit(2)
+    //   .skip(page)
+    //   .select(
+    //     '_id product_name produc_description product_price product_details product_image.secure_url owner'
+    //   );
+
     const offers = await Offer.find(filter)
       .populate({ path: 'owner', select: 'account' })
       .sort(sort)
-      .limit(2)
       .skip(page)
       .select(
         '_id product_name produc_description product_price product_details product_image.secure_url owner'
