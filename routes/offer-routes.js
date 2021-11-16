@@ -162,7 +162,7 @@ router.get('/offer/:id', async (req, res) => {
     const offer = await Offer.findById(req.params.id)
       .populate({ path: 'owner', select: 'account' })
       .select(
-        '_id product_name produc_description product_price product_details product_image.secure_url owner'
+        '_id product_name product_description product_price product_details product_image.secure_url owner'
       );
     if (offer) {
       res.json(offer);
